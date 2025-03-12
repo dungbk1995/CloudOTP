@@ -114,7 +114,7 @@ class _ChangelogScreenState extends State<ChangelogScreen>
           controller: _refreshController,
           refreshOnStart: true,
           onRefresh: () async {
-            await fetchReleases();
+            // await fetchReleases();
           },
           child: ListView.builder(
             padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10),

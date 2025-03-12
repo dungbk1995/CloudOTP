@@ -67,7 +67,7 @@ class GeneralSettingScreenState extends State<GeneralSettingScreen>
   void initState() {
     super.initState();
     if (ResponsiveUtil.isMobile()) getCacheSize();
-    fetchReleases(false);
+    // fetchReleases(false);
     getLogSize();
   }
 
@@ -179,7 +179,7 @@ class GeneralSettingScreenState extends State<GeneralSettingScreen>
                 : null,
         tip: currentVersion,
         onTap: () {
-          fetchReleases(true);
+          // fetchReleases(true);
         },
       ),
     ];

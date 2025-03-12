@@ -204,7 +204,7 @@ class MainScreenState extends State<MainScreen>
     HiveUtil.showCloudEntry().then((value) {
       appProvider.canShowCloudBackupButton = value;
     });
-    fetchReleases();
+    // fetchReleases(); // Finding new release version
     darkModeController = AnimationController(vsync: this);
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       darkModeWidget = LottieUtil.load(
