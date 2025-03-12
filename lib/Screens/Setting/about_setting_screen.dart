@@ -204,128 +204,128 @@ class _AboutSettingScreenState extends State<AboutSettingScreen>
                 style: Theme.of(context).textTheme.bodySmall,
               ),
             ),
-            Container(
-              margin: const EdgeInsets.all(10),
-              child: ScrollConfiguration(
-                behavior: NoShadowScrollBehavior(),
-                child: ListView(
-                  physics: const NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  padding: EdgeInsets.zero,
-                  children: [
-                    const SizedBox(height: 10),
-                    ItemBuilder.buildEntryItem(
-                      context: context,
-                      title: S.current.changelog,
-                      topRadius: true,
-                      showLeading: true,
-                      onTap: () {
-                        RouteUtil.pushCupertinoRoute(
-                            context, const ChangelogScreen());
-                      },
-                      leading: Icons.merge_type_outlined,
-                    ),
-                    ItemBuilder.buildEntryItem(
-                      context: context,
-                      title: S.current.bugReport,
-                      onTap: () {
-                        UriUtil.launchUrlUri(context, issueUrl);
-                      },
-                      showLeading: true,
-                      leading: Icons.bug_report_outlined,
-                    ),
-                    ItemBuilder.buildEntryItem(
-                      context: context,
-                      title: S.current.githubRepo,
-                      onTap: () {
-                        UriUtil.launchUrlUri(context, repoUrl);
-                      },
-                      showLeading: true,
-                      leading: Icons.commit_outlined,
-                    ),
-                    ItemBuilder.buildEntryItem(
-                      context: context,
-                      title: S.current.privacyPolicy,
-                      onTap: () {
-                        UriUtil.launchUrlUri(context,
-                            WebsiteUtil.getPrivacyPolicyWebsite(context));
-                      },
-                      showLeading: true,
-                      leading: Icons.privacy_tip_outlined,
-                    ),
-                    ItemBuilder.buildEntryItem(
-                      context: context,
-                      title: S.current.serviceTerm,
-                      onTap: () {
-                        UriUtil.launchUrlUri(context,
-                            WebsiteUtil.getServiceTermWebsite(context));
-                      },
-                      showLeading: true,
-                      bottomRadius: true,
-                      leading: Icons.topic_outlined,
-                    ),
-                    const SizedBox(height: 10),
-                    ItemBuilder.buildEntryItem(
-                      topRadius: true,
-                      context: context,
-                      title: S.current.rate,
-                      showLeading: true,
-                      onTap: () {
-                        BottomSheetBuilder.showBottomSheet(
-                          context,
-                          (context) => const StarBottomSheet(),
-                          responsive: true,
-                        );
-                      },
-                      leading: Icons.rate_review_outlined,
-                    ),
-                    ItemBuilder.buildEntryItem(
-                      context: context,
-                      title: S.current.shareApp,
-                      showLeading: true,
-                      onTap: () {
-                        Share.share(shareAppText);
-                      },
-                      leading: Icons.share_rounded,
-                    ),
-                    ItemBuilder.buildEntryItem(
-                      context: context,
-                      title: S.current.contact,
-                      onTap: () {
-                        UriUtil.launchEmailUri(
-                          context,
-                          feedbackEmail,
-                          subject: feedbackSubject,
-                          body: feedbackBody,
-                        );
-                      },
-                      showLeading: true,
-                      leading: Icons.contact_support_outlined,
-                    ),
-                    ItemBuilder.buildEntryItem(
-                      context: context,
-                      title: S.current.officialWebsite,
-                      onTap: () {
-                        UriUtil.launchUrlUri(context, officialWebsite);
-                      },
-                      showLeading: true,
-                      leading: Icons.language_outlined,
-                    ),
-                    ItemBuilder.buildEntryItem(
-                      context: context,
-                      title: S.current.telegramGroup,
-                      onTap: () {
-                        UriUtil.openExternal(telegramLink);
-                      },
-                      bottomRadius: true,
-                      showLeading: true,
-                      leading: Icons.telegram_outlined,
-                    ),
-                    const SizedBox(height: 10)
-                  ],
-                ),
-              ),
-            ),
+            // Container(
+            //   margin: const EdgeInsets.all(10),
+            //   child: ScrollConfiguration(
+            //     behavior: NoShadowScrollBehavior(),
+            //     child: ListView(
+            //       physics: const NeverScrollableScrollPhysics(),
+            //       shrinkWrap: true,
+            //       padding: EdgeInsets.zero,
+            //       children: [
+            //         const SizedBox(height: 10),
+            //         ItemBuilder.buildEntryItem(
+            //           context: context,
+            //           title: S.current.changelog,
+            //           topRadius: true,
+            //           showLeading: true,
+            //           onTap: () {
+            //             RouteUtil.pushCupertinoRoute(
+            //                 context, const ChangelogScreen());
+            //           },
+            //           leading: Icons.merge_type_outlined,
+            //         ),
+            //         ItemBuilder.buildEntryItem(
+            //           context: context,
+            //           title: S.current.bugReport,
+            //           onTap: () {
+            //             UriUtil.launchUrlUri(context, issueUrl);
+            //           },
+            //           showLeading: true,
+            //           leading: Icons.bug_report_outlined,
+            //         ),
+            //         ItemBuilder.buildEntryItem(
+            //           context: context,
+            //           title: S.current.githubRepo,
+            //           onTap: () {
+            //             UriUtil.launchUrlUri(context, repoUrl);
+            //           },
+            //           showLeading: true,
+            //           leading: Icons.commit_outlined,
+            //         ),
+            //         ItemBuilder.buildEntryItem(
+            //           context: context,
+            //           title: S.current.privacyPolicy,
+            //           onTap: () {
+            //             UriUtil.launchUrlUri(context,
+            //                 WebsiteUtil.getPrivacyPolicyWebsite(context));
+            //           },
+            //           showLeading: true,
+            //           leading: Icons.privacy_tip_outlined,
+            //         ),
+            //         ItemBuilder.buildEntryItem(
+            //           context: context,
+            //           title: S.current.serviceTerm,
+            //           onTap: () {
+            //             UriUtil.launchUrlUri(context,
+            //                 WebsiteUtil.getServiceTermWebsite(context));
+            //           },
+            //           showLeading: true,
+            //           bottomRadius: true,
+            //           leading: Icons.topic_outlined,
+            //         ),
+            //         const SizedBox(height: 10),
+            //         ItemBuilder.buildEntryItem(
+            //           topRadius: true,
+            //           context: context,
+            //           title: S.current.rate,
+            //           showLeading: true,
+            //           onTap: () {
+            //             BottomSheetBuilder.showBottomSheet(
+            //               context,
+            //               (context) => const StarBottomSheet(),
+            //               responsive: true,
+            //             );
+            //           },
+            //           leading: Icons.rate_review_outlined,
+            //         ),
+            //         ItemBuilder.buildEntryItem(
+            //           context: context,
+            //           title: S.current.shareApp,
+            //           showLeading: true,
+            //           onTap: () {
+            //             Share.share(shareAppText);
+            //           },
+            //           leading: Icons.share_rounded,
+            //         ),
+            //         ItemBuilder.buildEntryItem(
+            //           context: context,
+            //           title: S.current.contact,
+            //           onTap: () {
+            //             UriUtil.launchEmailUri(
+            //               context,
+            //               feedbackEmail,
+            //               subject: feedbackSubject,
+            //               body: feedbackBody,
+            //             );
+            //           },
+            //           showLeading: true,
+            //           leading: Icons.contact_support_outlined,
+            //         ),
+            //         ItemBuilder.buildEntryItem(
+            //           context: context,
+            //           title: S.current.officialWebsite,
+            //           onTap: () {
+            //             UriUtil.launchUrlUri(context, officialWebsite);
+            //           },
+            //           showLeading: true,
+            //           leading: Icons.language_outlined,
+            //         ),
+            //         ItemBuilder.buildEntryItem(
+            //           context: context,
+            //           title: S.current.telegramGroup,
+            //           onTap: () {
+            //             UriUtil.openExternal(telegramLink);
+            //           },
+            //           bottomRadius: true,
+            //           showLeading: true,
+            //           leading: Icons.telegram_outlined,
+            //         ),
+            //         const SizedBox(height: 10)
+            //       ],
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),
