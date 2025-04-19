@@ -118,7 +118,6 @@ dev_dependencies:
   msix: ^3.16.7
   sqflite_common_ffi: ^2.3.3
   flutter_launcher_icons: ^0.13.1
-  change_app_package_name: ^1.4.0
 
 msix_config:
   display_name: CloudOTP
