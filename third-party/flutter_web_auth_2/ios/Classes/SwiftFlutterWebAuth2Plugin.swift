@@ -75,9 +75,9 @@ public class SwiftFlutterWebAuth2Plugin: NSObject, FlutterPlugin {
                             return 
                         }
 
-                        _session = ASWebAuthenticationSession(url: url, callback: ASWebAuthenticationSession.Callback.https(host: host, path: path), completionHandler: completionHandler!)
+                        _session = ASWebAuthenticationSession(url: url, callbackURLScheme: "https://\(host)/\(path)", completionHandler: completionHandler!)
                     } else {
-                        _session = ASWebAuthenticationSession(url: url, callback: ASWebAuthenticationSession.Callback.customScheme(callbackURLScheme), completionHandler: completionHandler!)
+                        _session = ASWebAuthenticationSession(url: url, callbackURLScheme: callbackURLScheme, completionHandler: completionHandler!)
                     }
                 } else {
                     _session = ASWebAuthenticationSession(url: url, callbackURLScheme: callbackURLScheme, completionHandler: completionHandler!)
