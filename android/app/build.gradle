@@ -42,7 +42,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.cloudchewie.cloudotp"
+        applicationId "vn.v2secure.cyberguardian"
         minSdkVersion 23
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()

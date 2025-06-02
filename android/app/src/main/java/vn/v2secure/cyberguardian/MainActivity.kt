@@ -1,4 +1,4 @@
-package com.cloudchewie.cloudotp;
+package vn.v2secure.cyberguardian;
 
 import io.flutter.embedding.android.FlutterFragmentActivity
 

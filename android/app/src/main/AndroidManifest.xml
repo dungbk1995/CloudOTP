@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.cloudchewie.cloudotp">
+    package="vn.v2secure.cyberguardian">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -21,7 +21,7 @@
         android:extractNativeLibs="true"
         android:fullBackupContent="false"
         android:icon="@mipmap/ic_launcher"
-        android:label="V2Guardian"
+        android:label="V2 Authenticator"
         android:networkSecurityConfig="@xml/network_security_config"
         android:requestLegacyExternalStorage="true"
         android:usesCleartextTraffic="true">
