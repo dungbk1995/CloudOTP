@@ -34,7 +34,6 @@ import 'package:context_menus/context_menus.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_windowmanager/flutter_windowmanager.dart';
 import 'package:move_to_background/move_to_background.dart';
 import 'package:path/path.dart' as path;
 import 'package:protocol_handler/protocol_handler.dart';

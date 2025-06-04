@@ -28,8 +28,8 @@ import 'cloud_service.dart';
 class OneDriveCloudService extends CloudService {
   @override
   CloudServiceType get type => CloudServiceType.OneDrive;
-  static const String _redirectUrl =
-      'https://apps.cloudchewie.com/oauth/cloudotp/onedrive/callback';
+  // static const String _redirectUrl =
+  //     'https://apps.cloudchewie.com/oauth/cloudotp/onedrive/callback';
   static const String _callbackUrl = 'cloudotp://auth/onedrive/callback';
   static const String _clientId = '3b953ca4-3dd4-4148-a80b-b1ac8c39fd97';
   static const String _onedrivePath = '/CloudOTP';

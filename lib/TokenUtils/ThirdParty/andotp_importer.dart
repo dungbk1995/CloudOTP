@@ -146,7 +146,7 @@ class AndOTPTokenImporter implements BaseTokenImporter {
       return (jsonDecode(res) as List)
           .map((e) => e as Map<String, dynamic>)
           .toList();
-    } catch (e, t) {
+    } catch (e, _) {
       return null;
     }
   }
@@ -202,7 +202,7 @@ class AndOTPTokenImporter implements BaseTokenImporter {
               .map((e) => e as Map<String, dynamic>)
               .toList();
           await import(json);
-        } catch (e, t) {
+        } catch (e, _) {
           Uint8List data = file.readAsBytesSync();
           if (showLoading) dialog.dismiss();
           InputValidateAsyncController validateAsyncController =

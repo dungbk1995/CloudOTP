@@ -28,8 +28,8 @@ import 'cloud_service.dart';
 class DropboxCloudService extends CloudService {
   @override
   CloudServiceType get type => CloudServiceType.Dropbox;
-  static const String _redirectUrl =
-      'https://apps.cloudchewie.com/oauth/cloudotp/dropbox/callback';
+  // static const String _redirectUrl =
+  //     'https://apps.cloudchewie.com/oauth/cloudotp/dropbox/callback';
   static const String _callbackUrl = 'cloudotp://auth/dropbox/callback';
   static const String _clientId = 'ljyx5bk2jq92esr';
   static const String _dropboxEmptyPath = '';

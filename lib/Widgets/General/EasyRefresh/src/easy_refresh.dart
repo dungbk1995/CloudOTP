@@ -47,7 +47,7 @@ class _InheritedEasyRefresh extends InheritedWidget {
   final EasyRefreshData data;
 
   const _InheritedEasyRefresh({
-    super.key,
+    // super.key,
     required this.data,
     required super.child,
   });

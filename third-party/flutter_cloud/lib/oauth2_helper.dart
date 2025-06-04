@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'dart:math';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_web_auth_2/flutter_web_auth_2.dart';
 import 'package:hashlib/hashlib.dart';
 import 'package:http/http.dart' as http;

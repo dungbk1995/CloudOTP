@@ -100,74 +100,74 @@ class WinauthTokenImporter implements BaseTokenImporter {
       } else if (FileUtil.getFileExtension(path) == 'zip') {
         IToast.showTop(S.current.importFromWinauthNotSupportZip);
         return;
-        var bytes = file.readAsBytesSync();
-        if (showLoading) dialog.dismiss();
-        InputValidateAsyncController validateAsyncController =
-            InputValidateAsyncController(
-          listen: false,
-          validator: (text) async {
-            if (text.isEmpty) {
-              return S.current.autoBackupPasswordCannotBeEmpty;
-            }
-            if (showLoading) {
-              dialog.show(msg: S.current.importing, showProgress: false);
-            }
-            var res = await compute(
-              (receiveMessage) {
-                return decrypt(
-                    Uint8List.fromList(receiveMessage["data"] as List<int>),
-                    receiveMessage["password"] as String);
-              },
-              {
-                'data': bytes.toList(),
-                'password': text,
-              },
-            );
-            if (res[0] == DecryptResult.success) {
-              List<OtpToken> tokens =
-                  await ImportTokenUtil.importText(res[1], showToast: false);
-              await import(tokens);
-              if (showLoading) {
-                dialog.dismiss();
-              }
-              return null;
-            } else if (res[0] == DecryptResult.noFileInZip) {
-              if (showLoading) {
-                dialog.dismiss();
-              }
-              return S.current.noFileInZip;
-            } else {
-              if (showLoading) {
-                dialog.dismiss();
-              }
-              return S.current.invalidPasswordOrDataCorrupted;
-            }
-          },
-          controller: TextEditingController(),
-        );
-        BottomSheetBuilder.showBottomSheet(
-          rootContext,
-          responsive: true,
-          useWideLandscape: true,
-          (context) => InputBottomSheet(
-            validator: (value) {
-              if (value.isEmpty) {
-                return S.current.autoBackupPasswordCannotBeEmpty;
-              }
-              return null;
-            },
-            checkSyncValidator: false,
-            validateAsyncController: validateAsyncController,
-            title: S.current.inputImportPasswordTitle,
-            message: S.current.inputImportPasswordTip,
-            hint: S.current.inputImportPasswordHint,
-            inputFormatters: [
-              RegexInputFormatter.onlyNumberAndLetterAndSymbol,
-            ],
-            tailingType: InputItemTailingType.password,
-            onValidConfirm: (password) async {},
-          ),
-        );
+        // var bytes = file.readAsBytesSync();
+        // if (showLoading) dialog.dismiss();
+        // InputValidateAsyncController validateAsyncController =
+        //     InputValidateAsyncController(
+        //   listen: false,
+        //   validator: (text) async {
+        //     if (text.isEmpty) {
+        //       return S.current.autoBackupPasswordCannotBeEmpty;
+        //     }
+        //     if (showLoading) {
+        //       dialog.show(msg: S.current.importing, showProgress: false);
+        //     }
+        //     var res = await compute(
+        //       (receiveMessage) {
+        //         return decrypt(
+        //             Uint8List.fromList(receiveMessage["data"] as List<int>),
+        //             receiveMessage["password"] as String);
+        //       },
+        //       {
+        //         'data': bytes.toList(),
+        //         'password': text,
+        //       },
+        //     );
+        //     if (res[0] == DecryptResult.success) {
+        //       List<OtpToken> tokens =
+        //           await ImportTokenUtil.importText(res[1], showToast: false);
+        //       await import(tokens);
+        //       if (showLoading) {
+        //         dialog.dismiss();
+        //       }
+        //       return null;
+        //     } else if (res[0] == DecryptResult.noFileInZip) {
+        //       if (showLoading) {
+        //         dialog.dismiss();
+        //       }
+        //       return S.current.noFileInZip;
+        //     } else {
+        //       if (showLoading) {
+        //         dialog.dismiss();
+        //       }
+        //       return S.current.invalidPasswordOrDataCorrupted;
+        //     }
+        //   },
+        //   controller: TextEditingController(),
+        // );
+        // BottomSheetBuilder.showBottomSheet(
+        //   rootContext,
+        //   responsive: true,
+        //   useWideLandscape: true,
+        //   (context) => InputBottomSheet(
+        //     validator: (value) {
+        //       if (value.isEmpty) {
+        //         return S.current.autoBackupPasswordCannotBeEmpty;
+        //       }
+        //       return null;
+        //     },
+        //     checkSyncValidator: false,
+        //     validateAsyncController: validateAsyncController,
+        //     title: S.current.inputImportPasswordTitle,
+        //     message: S.current.inputImportPasswordTip,
+        //     hint: S.current.inputImportPasswordHint,
+        //     inputFormatters: [
+        //       RegexInputFormatter.onlyNumberAndLetterAndSymbol,
+        //     ],
+        //     tailingType: InputItemTailingType.password,
+        //     onValidConfirm: (password) async {},
+        //   ),
+        // );
       }
     } catch (e, t) {
       ILogger.error("CloudOTP", "Failed to import from Winauth", e, t);

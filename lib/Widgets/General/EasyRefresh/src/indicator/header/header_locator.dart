@@ -91,7 +91,7 @@ class _HeaderLocatorRenderWidget extends SingleChildRenderObjectWidget {
   final double paintExtent;
 
   const _HeaderLocatorRenderWidget({
-    super.key,
+    // super.key,
     required super.child,
     required this.isSliver,
     required this.paintExtent,
@@ -185,7 +185,7 @@ class _HeaderLocatorRenderSliver extends RenderSliverSingleBoxAdapter {
   _HeaderLocatorRenderSliver({
     required this.context,
     required this.paintExtent,
-    super.child,
+    // super.child,
   });
 
   @override

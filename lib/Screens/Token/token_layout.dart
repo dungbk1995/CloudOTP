@@ -552,21 +552,27 @@ class TokenLayoutState extends State<TokenLayout>
         value: tokenLayoutNotifier,
         child: Selector<TokenLayoutNotifier, String>(
           selector: (context, tokenLayoutNotifier) => tokenLayoutNotifier.code,
-          builder: (context, code, child) => Container(
-            alignment: alignment,
-            child: AutoSizeText(
-              codeVisiable
-                  ? code
-                  : (isHOTP ? hotpPlaceholderText : placeholderText) *
-                      widget.token.digits.digit,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.w600,
-                    fontSize: fontSize,
-                    letterSpacing: letterSpacing,
-                    color: Theme.of(context).primaryColor,
-                  ),
-              maxLines: 1,
+          builder: (context, code, child) => ValueListenableBuilder(
+            valueListenable: progressNotifier,
+            builder: (context, value, _) => Container(
+              alignment: alignment,
+              child: AutoSizeText(
+                codeVisiable
+                    ? code
+                    : (isHOTP ? hotpPlaceholderText : placeholderText) *
+                        widget.token.digits.digit,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.w600,
+                      fontSize: fontSize,
+                      letterSpacing: letterSpacing,
+                      color: progressNotifier.value >
+                          autoCopyNextCodeProgressThrehold
+                          ? Theme.of(context).primaryColor
+                          : Colors.red,
+                    ),
+                maxLines: 1,
+              ),
             ),
           ),
         ),
@@ -743,7 +749,7 @@ class TokenLayoutState extends State<TokenLayout>
   }
 
   _buildCompactLayout() {
-    TextTheme textTheme = Theme.of(context).textTheme;
+    // TextTheme textTheme = Theme.of(context).textTheme;
     return ItemBuilder.buildClickItem(
       Material(
         color: widget.token.pinned

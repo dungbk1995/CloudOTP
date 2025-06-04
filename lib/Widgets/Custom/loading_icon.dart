@@ -32,10 +32,10 @@ const List<int> _kAlphaValues = <int>[
 
 const double _kTwoPI = pi * 2.0;
 const int _partiallyRevealedAlpha = 147;
-const Color _kActiveTickColor = CupertinoDynamicColor.withBrightness(
-  color: Color(0xFF3C3C44),
-  darkColor: Color(0xFFEBEBF5),
-);
+// const Color _kActiveTickColor = CupertinoDynamicColor.withBrightness(
+//   color: Color(0xFF3C3C44),
+//   darkColor: Color(0xFFEBEBF5),
+// );
 
 enum LoadingStatus { none, loading, success, failedAndLoading, failed }
 
@@ -114,11 +114,11 @@ class LoadingIconState extends State<LoadingIcon>
                     progress: widget.progress,
                   ),
                 );
-              case LoadingStatus.success:
-                return const Icon(
-                  Icons.done_rounded,
-                  color: Colors.green,
-                );
+              // case LoadingStatus.success:
+              //   return const Icon(
+              //     Icons.done_rounded,
+              //     color: Colors.green,
+              //   );
               case LoadingStatus.failedAndLoading:
                 return const Icon(
                   Icons.error_outline_rounded,

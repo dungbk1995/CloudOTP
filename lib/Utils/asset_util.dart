@@ -70,8 +70,8 @@ class AssetUtil {
     bool forceLight = true,
   }) {
     if (brand.isEmpty) return "";
-    String darkPath = brand.replaceAll(".png", "_dark.png");
-    bool hasDark = TokenImageUtil.darkBrandLogos.contains(darkPath);
+    // String darkPath = brand.replaceAll(".png", "_dark.png");
+    // bool hasDark = TokenImageUtil.darkBrandLogos.contains(darkPath);
     return 'assets/brand/$brand';
   }
 

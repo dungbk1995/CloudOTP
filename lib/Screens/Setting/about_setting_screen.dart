@@ -16,24 +16,16 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:cloudotp/Screens/Setting/change_log_screen.dart';
 import 'package:cloudotp/Screens/Setting/egg_screen.dart';
 import 'package:cloudotp/Utils/file_util.dart';
 import 'package:cloudotp/Utils/route_util.dart';
-import 'package:cloudotp/Utils/uri_util.dart';
-import 'package:cloudotp/Utils/website_util.dart';
-import 'package:cloudotp/Widgets/BottomSheet/bottom_sheet_builder.dart';
-import 'package:cloudotp/Widgets/BottomSheet/star_bottom_sheet.dart';
-import 'package:cloudotp/Widgets/Custom/no_shadow_scroll_behavior.dart';
 import 'package:cloudotp/Widgets/Shake/shake_animation_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:share_plus/share_plus.dart';
 
 import '../../Utils/constant.dart';
 import '../../Utils/hive_util.dart';
-import '../../Utils/iprint.dart';
 import '../../Utils/responsive_util.dart';
 import '../../Widgets/General/EasyRefresh/easy_refresh.dart';
 import '../../Widgets/Item/item_builder.dart';

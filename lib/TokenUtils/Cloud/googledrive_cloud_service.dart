@@ -27,8 +27,8 @@ import 'cloud_service.dart';
 class GoogleDriveCloudService extends CloudService {
   @override
   CloudServiceType get type => CloudServiceType.GoogleDrive;
-  static const String _redirectUrl =
-      'https://apps.cloudchewie.com/oauth/cloudotp/googledrive/callback';
+  // static const String _redirectUrl =
+  //     'https://apps.cloudchewie.com/oauth/cloudotp/googledrive/callback';
   static const String _callbackUrl = 'cloudotp://auth/googledrive/callback';
   static const String _clientId =
       '547353482361-fi716v2qnfvh3aj515ok1r4cdqqhdqbh.apps.googleusercontent.com';

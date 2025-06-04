@@ -21,7 +21,6 @@ import 'package:cloudotp/Screens/home_screen.dart';
 import 'package:cloudotp/Utils/app_provider.dart';
 import 'package:cloudotp/Utils/enums.dart';
 import 'package:cloudotp/Utils/file_util.dart';
-import 'package:cloudotp/Utils/font_util.dart';
 import 'package:cloudotp/Utils/responsive_util.dart';
 import 'package:cloudotp/Utils/utils.dart';
 import 'package:flutter/material.dart';
