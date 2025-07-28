@@ -108,7 +108,7 @@ Future<void> initApp(WidgetsBinding widgetsBinding) async {
     }
   }
   await initCryptoUtil();
-  NotificationUtil.init();
+  // NotificationUtil.init();
   await BiometricUtil.initStorage();
   await TokenImageUtil.loadBrandLogos();
   ResponsiveUtil.init();

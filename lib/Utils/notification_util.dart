@@ -16,33 +16,33 @@
 import 'package:cloudotp/Utils/responsive_util.dart';
 import 'package:cloudotp/Utils/utils.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:install_plugin/install_plugin.dart';
+
 
 class NotificationUtil {
   static final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
       FlutterLocalNotificationsPlugin();
 
-  static init() async {
-    if (ResponsiveUtil.isAndroid()) {
-      await initAndroid();
-    }
-  }
-
-  static initAndroid() async {
-    var android = const AndroidInitializationSettings("@mipmap/ic_launcher");
-    await flutterLocalNotificationsPlugin.initialize(
-      InitializationSettings(android: android),
-      onDidReceiveNotificationResponse: (respose) async {
-        if (respose.id == 1 && Utils.isNotEmpty(respose.payload)) {
-          await InstallPlugin.install(respose.payload!);
-        }
-      },
-    );
-    flutterLocalNotificationsPlugin
-        .resolvePlatformSpecificImplementation<
-            AndroidFlutterLocalNotificationsPlugin>()
-        ?.requestNotificationsPermission();
-  }
+  // static init() async {
+  //   if (ResponsiveUtil.isAndroid()) {
+  //     await initAndroid();
+  //   }
+  // }
+  //
+  // static initAndroid() async {
+  //   var android = const AndroidInitializationSettings("@mipmap/ic_launcher");
+  //   await flutterLocalNotificationsPlugin.initialize(
+  //     InitializationSettings(android: android),
+  //     onDidReceiveNotificationResponse: (respose) async {
+  //       if (respose.id == 1 && Utils.isNotEmpty(respose.payload)) {
+  //         await InstallPlugin.install(respose.payload!);
+  //       }
+  //     },
+  //   );
+  //   flutterLocalNotificationsPlugin
+  //       .resolvePlatformSpecificImplementation<
+  //           AndroidFlutterLocalNotificationsPlugin>()
+  //       ?.requestNotificationsPermission();
+  // }
 
   static Future<void> closeNotification(int id) async {
     if (ResponsiveUtil.isAndroid()) {

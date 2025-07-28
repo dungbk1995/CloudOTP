@@ -32,7 +32,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:hive/hive.dart';
-import 'package:install_plugin/install_plugin.dart';
+
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
@@ -482,14 +482,14 @@ class FileUtil {
                 payload: savePath,
               );
             } else {
-              DialogBuilder.showConfirmDialog(context,
-                  title: S.current.downloadComplete,
-                  message: S.current.downloadSuccessClickToInstall,
-                  cancelButtonText: S.current.updateLater,
-                  confirmButtonText: S.current.immediatelyInstall,
-                  onTapConfirm: () async {
-                await InstallPlugin.install(savePath);
-              });
+              // DialogBuilder.showConfirmDialog(context,
+              //     title: S.current.downloadComplete,
+              //     message: S.current.downloadSuccessClickToInstall,
+              //     cancelButtonText: S.current.updateLater,
+              //     confirmButtonText: S.current.immediatelyInstall,
+              //     onTapConfirm: () async {
+              //   await InstallPlugin.install(savePath);
+              // });
             }
           } else {
             UriUtil.openExternal(htmlUrl);
